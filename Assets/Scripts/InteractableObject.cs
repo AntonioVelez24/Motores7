@@ -19,6 +19,7 @@ public class InteractableObject : MonoBehaviour
         {
             OnCollisionMusic?.Invoke(musicSettings.AudioMixerGroup, musicData.AudioClip);
             OnCollisionMusic?.Invoke(sfxSettings.AudioMixerGroup, sfxData.AudioClip);
+            FadeManager.Instance.FadeInFadeOut();
         }
     }
     private void OnTriggerExit(Collider other)
@@ -27,6 +28,7 @@ public class InteractableObject : MonoBehaviour
         {
             OnCollisionMusic?.Invoke(sfxSettings.AudioMixerGroup, sfxData.AudioClip);
             OnExitSFX?.Invoke();
+            FadeManager.Instance.FadeInFadeOut();
         }
     }
 }
